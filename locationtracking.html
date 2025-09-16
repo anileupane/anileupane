@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Your Continent</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        select, button {
+            padding: 10px;
+            font-size: 16px;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Find Your Continent</h1>
+    <p>Select your country:</p>
+    <select id="country">
+        <option value="">--Select Country--</option>
+        <option value="USA">USA</option>
+        <option value="Canada">Canada</option>
+        <option value="Brazil">Brazil</option>
+        <option value="France">France</option>
+        <option value="India">India</option>
+        <option value="China">China</option>
+        <option value="Australia">Australia</option>
+        <option value="Egypt">Egypt</option>
+        <option value="South Africa">South Africa</option>
+    </select>
+    <br><br>
+    <button onclick="findContinent()">Find Continent</button>
+    <div id="result"></div>
+
+    <script>
+        function findContinent() {
+            const country = document.getElementById("country").value;
+            let continent = "";
+
+            switch(country) {
+                case "USA":
+                case "Canada":
+                    continent = "North America";
+                    break;
+                case "Brazil":
+                    continent = "South America";
+                    break;
+                case "France":
+                    continent = "Europe";
+                    break;
+                case "India":
+                case "China":
+                    continent = "Asia";
+                    break;
+                case "Australia":
+                    continent = "Australia";
+                    break;
+                case "Egypt":
+                case "South Africa":
+                    continent = "Africa";
+                    break;
+                default:
+                    continent = "Unknown. Please select a country!";
+            }
+
+            document.getElementById("result").innerText = continent;
+        }
+    </script>
+</body>
+</html>
